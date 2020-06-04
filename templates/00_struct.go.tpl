@@ -148,3 +148,6 @@ func (*{{$alias.DownSingular}}R) NewStruct() *{{$alias.DownSingular}}R {
 // {{$alias.DownSingular}}L is where Load methods for each relationship are stored.
 type {{$alias.DownSingular}}L struct{}
 {{end -}}
+
+// GetTableName returns the real table name.
+func (_ {{$alias.UpSingular}}) GetTableName() string { return "{{.Table.Name}}" }
